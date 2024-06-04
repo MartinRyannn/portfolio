@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="mainContainer1">
+        <div class="tableTop"></div>
+
+        <img src="images/finished4.png" alt="" class="landingImage">
+
+        <div class="startButtonContainer" >
+            <div class="profileIMGcontainer">
+            <img src="images/loginpfp.png" alt="" class="loginProfileIMG">
+        </div>
+        <div class="username">Username</div>
+        <div class="inputContainer">
+            <div class="contSpace"></div>
+            <input type="password" placeholder=" Password" type="text" class="loginInput">
+            <div class="contSpace">
+                <img src="images/buttons/navButton.png" alt="" id="startButton" class="startButton">
+            </div>
+        </div>
+            
+        </div>
+        
+    </div>
+    <div class="lightBox"></div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function(){
+            document.querySelector('.landingImage').classList.add('animate');
+            document.querySelector('.tableTop').classList.add('animate2');
+            document.querySelector('.startButtonContainer').classList.add('invisible');
+            setTimeout(function() {
+                window.location.href = 'loading.html';
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>
