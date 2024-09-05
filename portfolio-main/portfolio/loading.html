@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/stylesTest.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <img src="images/windowsLogo.png" alt="" class="loadingLogo" id="loadingLogo">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.getElementById('loadingLogo');
+            logo.classList.add('reveal');
+
+            setTimeout(() => {
+                logo.classList.remove('reveal');
+                logo.classList.add('hide');
+
+                setTimeout(() => {
+                    window.location.href = 'desktop.html';
+                }, 3000);
+            }, 3000); 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1067 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Press+Start+2P&family=Russo+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "M PLUS 2", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Remove the background */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #9aaef4; /* Set the scrollbar thumb color */
+    border-radius: 12px; /* Add border radius to the thumb */
+  }
+  
+  /* Firefox */
+  html {
+    scrollbar-width: thin; /* Set the scrollbar width to thin */
+    scrollbar-color: #9aaef4 transparent; /* Set thumb color and track color */
+  }
+  
+  /* Optional: Customize for other elements */
+@keyframes revealScreen {
+    from {
+        background-color: black;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+        display: none;
+    }
+}
+
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background.png);
+    background-size: cover;
+    filter: brightness(1);
+    display: flex;
+    overflow: hidden;
+}
+
+.appsContainer {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    margin-left: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.appBox {
+    width: 70px;
+    height: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 35px auto;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.appIcon {
+    width: 85%;
+    height: 85%;
+    margin: auto;
+}
+
+.appTitle {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 0.15px rgba(0, 0, 0, 0.632);
+}
+
+.blind {
+    width: 100vw;
+    height: 100vh;
+    animation: revealScreen 3s forwards;
+    background-color: black;
+    position: fixed;
+    z-index: 100;
+}
+
+
+/* PAGES */
+
+    .pageContainer1{
+        width: 50%;
+        height: 70%;
+        background-color: #FBFBFD;
+        border: 5px solid #0155EA;
+        border-top: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 15px;
+    }
+    .pageContainer2{
+        width: 50%;
+        height: 75%;
+        background-color: #FBFBFD;
+        border: 5px solid #0155EA;
+        border-top: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 15px;
+    }
+    .pageContainer3{
+        width: 50%;
+        height: 75%;
+;
+        border: 5px solid #0155EA;
+        border-top: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 15px;
+    }
+    .pageContainer4{
+        width: 50%;
+        height: 70%;
+        background-color: #FBFBFD;
+        border: 5px solid #0155EA;
+        border-top: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 15px;
+    }
+    
+    .pageTopBar{
+        width: 100%;
+        height: 35px;
+        background-color: #0155EA;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .topBarIcon{
+        width: 22px;
+        height: 22px;
+        margin: auto 5px;
+
+    }
+    .topBarTitle{
+        width: 82%;
+        height: 100%;
+        color: white;
+        -webkit-text-stroke: 2px solid black;
+        font-size: 13px;
+        margin: auto 0;
+        line-height: 32px;
+    }
+    .topBarButtons{
+        width: 13%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        float: right;
+    }
+    .topButtonBox{
+        width: 26px;
+        height: 26px;
+        margin: auto;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    .topButton{
+        width: 26px;
+        height: 26px;
+        margin: auto;
+        cursor: pointer;
+        margin: auto;
+    }
+    .topButton2{
+        width: 26px;
+        height: 26px;
+        margin: auto;
+        cursor: pointer;
+        margin: auto;
+        float: right;
+    }
+
+    .pageLeftBar{
+        width: 30%;
+        height: 95%;
+        background-color: #4764ce;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .pageLeftBar2{
+        width: 28%;
+        height: 95%;
+        background-color: #6981D9;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .pageRightBar{
+        width: 72%;
+        height: 93.2%;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .pageRightBar2{
+        width: 70%;
+        height: 93.2%;
+        border-bottom-left-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .profileImage{
+        width: 160px;
+        height: 150px;
+        margin: 20px auto;
+    }
+    .infoBox{
+        width: 80%;
+        height: 15%;
+        background-color: #6981D9;
+        margin: 10px auto;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .infoBoxTop{
+        width: 100%;
+        height: 35%;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        display: flex;
+        flex-direction: row;
+    }
+    .infoTopIcon{
+        width: 20px;
+        height: 20px;
+        margin: auto;
+        margin-left: 10px;
+        margin-right: 30px;
+    }
+    .infoBoxTopText{
+        width: 80%;
+        color: white;
+        -webkit-text-stroke: 0.15px rgba(0, 0, 0, 0.632);
+    }
+    .infoBoxBottom{
+        width: 100%;
+        height: 65%;
+        background-color: #FBFBFD;
+        display: flex;
+    }
+    .infoBoxBottomText{
+        width: 100%;
+        text-align: center;
+        color: #1C56C2;
+        -webkit-text-stroke: 0.15px rgba(0, 0, 0, 0.632);
+        font-weight: bold;
+        margin: auto;
+    }
+    .rightBarTopText{
+        width: 100%;
+        height: 10%;
+        font-size: 30px;
+        color: #1C56C2;
+        -webkit-text-stroke: black 0.15px;
+        margin-left: 10px;
+    }
+    .rightBarContainer{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .rightBarContainer2{
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: darkblue;
+        border-bottom-right-radius: 12px;
+        overflow-y: auto;
+    }
+
+    .rightBarItem{
+        width: 45%;
+        height: 60px;
+        margin: auto;
+        display: flex;
+        background-color: #f1f1f4;
+        border-bottom: #0155EA 2px solid;
+        border-radius: 2px;
+        cursor: pointer;
+
+    }
+    .itemIcon{
+        width: 30px;
+        height: 30px;
+        margin: auto;
+    }
+    .itemText{
+        width: 70%;
+        margin: auto;
+        color: #1C56C2;
+        font-size: 16px;
+        -webkit-text-stroke: 0.1px black;
+        text-align: center;
+    }
+    .skillBottom{
+        width: 100%;
+        height: 94%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .skillBox{
+        width: 31%;
+        height: 130px;
+        background-color: #ECE9D8;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border: 4px solid #1C56C2;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        flex-direction: column;
+    }
+    .skillBox2{
+        width: 23%;
+        height: 45%;
+        background-color: #ECE9D8;
+        margin: auto;
+        display: none;
+        flex-wrap: wrap;
+        border: 4px solid #1C56C2;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        flex-direction: column;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .skillBox3{
+        width: 30%;
+        height: 56%;
+        background-color: #ECE9D8;
+        margin: auto;
+        display: none;
+        flex-wrap: wrap;
+        border: 4px solid #1C56C2;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        flex-direction: column;
+        position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+    }
+    .skillBoxTop{
+        width: 100%;
+        height: 20%;
+        background-color: #1C56C2;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        margin-top: -1px;
+        display: flex;
+        flex-direction: row;
+    }
+    .skillBoxTop2{
+        width: 100%;
+        height: 13%;
+        background-color: #1C56C2;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        margin-top: -1px;
+        display: flex;
+        flex-direction: row;
+    }
+    .skillBoxTop3{
+        width: 100%;
+        height: 8%;
+        background-color: #1C56C2;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        margin-top: -1px;
+        display: flex;
+        flex-direction: row;
+    }
+    .aboutText{
+        color: #1C56C2;
+        margin: auto;
+        text-align: center;
+            font-size: 20px;
+            border-bottom: 3px solid #0155EA;
+            cursor: pointer;
+            border-bottom-left-radius: 6px ;
+            border-bottom-right-radius: 6px;
+            padding: 5px;
+    }
+    
+    .skillBoxTopIcon{
+        width: 20px;
+        height: 20px;
+        margin: auto 5px;
+    }
+    .boxTopText{
+        color: white;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    .boxTopText2{
+        width: 80%;
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        margin: .8vh 0;
+    }
+    .boxMiddleContainer{
+        width: 100%;
+        height: 80%;
+        display: flex;
+    }
+    .boxMiddleIcon{
+        width: 50px;
+        height: 50px;
+       
+        margin: auto;
+        margin-top: 4.3vh;
+    }
+    .boxMiddleText{
+        margin: auto;
+        width: 60%;
+        text-align: center;
+        font-weight: 250;
+        font-size: 22px;
+    }
+
+    .navBar{
+        width: 100%;
+        height: 45px;
+        background-color: #255ED9;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+      }
+      .winButton{
+        width: 10%;
+        height: 100%;
+        background-color: #236423;
+        box-shadow: inset 0 0 40px 2px #67ce67;
+        display: flex;
+        flex-direction: row;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+      }
+      .winIcon{
+        height: 70%;
+        margin: auto;
+        margin-right: 0;
+      }
+      .winText{
+        margin:auto;
+        width: 45%;
+        color: white;
+        font-size: 22px;
+      }
+
+      .leftTopHeading{
+        color: white;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 10px;
+      }
+      .experienceButtonContainer{
+        width: 100%;
+        height: 50%;
+        margin: 30px auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .experienceButton{
+        width: 90%;
+        height: 45px;
+        background-color: #FBFBFD;
+        border-radius: 2px;
+        color: #1C56C2;
+        border: none;
+        text-align: center;
+        line-height: 45px;
+        font-size: 17px;
+        cursor: pointer;
+        font-weight: 750;
+        margin: auto;
+      }
+
+
+      .experiencesContainer{
+        width: 100%;
+        height: 100%;
+        background-color: #FBFBFD;
+        flex-wrap: wrap;
+    }
+    .experiencesContainer2{
+        width: 100%;
+        height: 100%;
+        background-color: #FBFBFD;
+        flex-wrap: wrap;
+        display: none;
+    }
+    .experiencesContainer3 {
+        display: none;  
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #FBFBFD;
+        flex-wrap: wrap;
+    }
+    .experiencesContainer4 {
+        display: none;  
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #FBFBFD;
+        flex-wrap: wrap;
+    }
+    .experiencesMainHeading{
+        color: #1C56C2;
+        width: 100%;
+        text-align: center;
+        font-size: 28px;
+        margin-top: 20px;
+        font-weight: bolder;
+    }
+    .experienceContainer{
+        width: 100%;
+        height: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .expLeft{
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .experienceBox-small{
+        width: 96%;
+        height: 22%;
+        background-color: #5D80FE;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border-radius: 2px;
+    }
+    .experienceBox-mid{
+        width: 96%;
+        height: 70%;
+        background-color: #5D80FE;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 2px;
+    }
+    .experienceBox-big{
+        width: 52%;
+        height: 96%;
+        background-color: #5D80FE;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 2px;
+    }
+    .expBoxHeading{
+        color: white;
+        font-weight: 200;
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        
+    }
+    .expBoxText{
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        font-size: 26px;
+    }
+    .expSkillBox{
+        width: 90%;
+        height: 35%;
+        background-color: #2773E1;
+        border: 1.5px solid #1C56C2;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 4px;
+    }
+    .expSkillBox-big{
+        width: 90%;
+        height: 60%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 4px;
+    }
+
+    .expSkillBox-scroll{
+        width: 90%;
+        height: 35%;
+        background-color: #2773E1;
+        border: 1.5px solid #1C56C2;
+        margin: auto;
+        border-radius: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+    .expSkillHeading{
+        color: white;
+        font-weight: 500;
+        height: 30%;
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+    }
+    .rateBox{
+        width:48%;
+        height: 60%;
+        background-color: #5D80FE;
+        border: 1px solid #1C56C2;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 3px;
+        margin: auto;
+    }
+    .rateBox-big{
+        width:42%;
+        height: 30%;
+        background-color: #2773E1;
+        border: 1px solid #1C56C2;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 3px;
+        margin: auto;
+    }
+    .rateBox-bigger{
+        width:42%;
+        height: 32%;
+        background-color: #2773E1;
+        border: 1px solid #1C56C2;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 3px;
+        margin: auto;
+
+    }
+    .bellow{
+        margin-top: 10px;
+    }
+    .above{
+        margin-top: 5vh;
+    }
+    .rateTitle{
+        color: white;
+        font-weight: 700;
+        height: 30%;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+    }
+    .rateTitle-big{
+        color: white;
+        font-weight: 800;
+        height: 30%;
+        text-align: center;
+        width: 100%;
+        font-size: 15px;
+    }
+    .starBox{
+        width: 90%;
+        height: 70%;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .star{
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        border: 1px solid #1C56C2;
+        width: 13px;
+        height: 13px;
+        box-shadow: 0 0 8px 0 #FFFFFF;
+    }
+    .star-0{
+        border-radius: 50%;
+        background-color: #2773E1;
+        border: 1px solid #1C56C2;
+        width: 13px;
+        height: 13px;
+    }
+    .expBoxParagraph{
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        height: 20%;
+        font-size: 15px;
+        margin: 10px auto;
+    }
+    .expBoxParagraph-small{
+        color: white;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        height: 20%;
+        font-size: 15px;
+        margin: 10px auto;
+    }
+    .boldSpan{
+        color: #C3D8FF;
+        font-weight: 900;
+    }
+
+    .pageContainer5{
+        width: 50%;
+        height: 70%;
+        background-color: #000000;
+        border: 5px solid #ffffff;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-wrap: wrap;
+    }
+
+
+
+
+    @font-face {
+        font-family: 'console'; /* Choose a name for your font */
+        src: url('../fonts/W95FA.otf') format('opentype'); /* Specify the path to your font file */
+    }
+
+    .fontTest{
+        font-family: 'console', sans-serif;
+    }
+    .noRadius{
+        border-radius: 0;
+    }
+
+    .consoleBox{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .logText {
+        font-family: 'console', sans-serif;
+        font-size: 14px;
+        color: white;
+        margin-left: 10px;
+        width: 100%;
+    }
+    
+    .green {
+        color: rgb(0, 255, 0);
+    }
+    .projectBox{
+        border: 3px dashed white;
+        width: 40%;
+        height: 40%;
+        background: transparent;
+        cursor: pointer;
+        margin: auto;
+        display: none; /* change to none */
+        
+
+    }
+    .Pbox1{
+        background-image: url('../images/progress.jpg');
+        background-size: cover;
+    }
+    .Pbox2{
+        background-image: url('../images/progress.jpg');
+        background-size: cover;
+    }
+    .Pbox3{
+        background-image: url('../images/progress.jpg');
+        background-size: cover;
+    }
+    .Pbox4{
+        background-image: url('../images/progress.jpg');
+        background-size: cover;
+    }
+
+
+    .contactButton{
+        width: 50%;
+        height: 40px;
+        background-color: #5D80FE;
+        border: none;
+        border-bottom: 3px solid #0155EA;
+        border-radius: 3px;
+        margin: auto;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #contact-form{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactInputContainer{
+        width: 90%;
+        height: 23%;
+        border: none;
+        border-radius: 7px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .contactInputContainer2{
+        width: 90%;
+        height: 37%;
+        border: none;
+        border-radius: 7px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    
+    .contactTitle{
+        width: 100%;
+        color: #1C56C2;
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+    }
+    .contactInput{
+        margin: auto;
+        width: 50%;
+        height: 30px;
+        border: 2px solid #1C56C2;
+    }
+    .contactInput2{
+        margin: auto;
+        width: 50%;
+        height: 70px;
+        border: 2px solid #1C56C2;
+    }
+    .submitButton{
+        width: 50%;
+        height: 32px;
+        background-color: #C3D8FF;
+        border: 1px solid #255ED9;
+        color: #255ED9;
+        font-size: 17px;
+        text-transform: uppercase;
+        margin: auto;
+        cursor: pointer;
+    }
+    .error-message{
+        font-size: 8px;
+        color: red;
+        width: 100%;
+        text-align: center;
+    }
+    .success-message{
+        font-size: 12px;
+        color: rgb(51, 199, 100);
+        width: 100%;
+        text-align: center;
+    }
+
+/* PAGE END */
+
+@media only screen and (max-width: 600px) {
+    .appsContainer{
+        width: auto;
+    }
+    .appBox{
+        margin: 20px auto;
+    }
+    .winButton{
+        width: 45%;
+    }
+    .pageContainer1{
+        width: 99%;
+    }
+    .profileImage{
+        width: 70px;
+        height: 70px;
+    }
+    .infoBox{
+        width: 95%;
+    }
+    .infoTopIcon{
+        margin-right: 0;
+    }
+    .infoBoxTopText{
+        font-size: 8px;
+        width: 70%;
+        line-height: 20px;
+    }
+    .infoBoxBottomText{
+        font-size: 10px;
+    }
+    .itemText{
+        font-size: 10px;
+    }
+    .topBarTitle{
+        width: 65%;
+    }
+    .pageContainer5{
+        width: 98%;
+    }
+    .pageContainer4 {
+        width: 98%;
+    }
+    .pageLeftBar2{
+        width: 20%;
+    }
+    .leftTopHeading{
+        width: 100%;
+        font-size: 8px;
+    }
+    .experienceButtonContainer{
+        margin: 5px auto;
+    }
+    .experienceButton{
+        font-size: 6px;
+    }
+    .pageRightBar{
+        width: 80%;
+    }
+    .experiencesMainHeading{
+        font-size: 16px;
+    }
+    .expBoxHeading{
+        font-size: 13px;
+    }
+    .expBoxParagraph{
+        font-size: 9px;
+    }
+    .expBoxParagraph-small{
+        font-size: 9px;
+    }
+    .expSkillBox-big{
+        width: 100%;
+    }
+    .star{
+        width: 8px;
+        height: 8px;
+    }
+    .star-0{
+        width: 8px;
+        height: 8px;
+    }
+    .rateTitle-big{
+        font-size: 8px;
+    }
+    .rateBox-big{
+        height: 20%;
+    }
+    .rateBox{
+        width: 70%;
+    }
+    .expSkillHeading{
+        font-size: 11px;
+    }
+    .rateTitle{
+        font-size: 6px;
+    }
+    .rateBox-bigger{
+        height: 20%;
+    }
+    .pageContainer2{
+        width: 100%;
+    }
+    .skillBox{
+        width: 70%;
+        margin: 20px auto;
+    }
+    .skillBottom{
+        overflow-y: auto;
+    }
+    .skillBox2{
+        width: 100%;
+    }
+    .skillBox3{
+        width: 95%;
+    }
+    .contactInput{
+        width: 80%;
+    }
+    .contactInput2{
+        width: 80%;
+    }
+  }
