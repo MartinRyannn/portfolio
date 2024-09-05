@@ -72,8 +72,8 @@
 
 .landingImage{
     width:60%;
-    height: 80%;
-    margin: 10vh auto;
+    height: 90%;
+    margin: 0vh auto;
     z-index: 10;
 }
 .tableTop{
@@ -108,7 +108,7 @@ box-shadow: 0px 35px 4px 13px rgba(107,107,107,0.25);
     z-index: 12;
     cursor: pointer;
     position: fixed;
-    top: 40%;
+    top: 32%;
     left: 49%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -200,4 +200,33 @@ box-shadow: 0px 35px 4px 13px rgba(107,107,107,0.25);
 .loginProfileIMG::placeholder{
   color: #A49E9E;
   font-weight: 200;
+}
+@media only screen and (max-width: 600px) {
+  .landingImage{
+    width: 100%;
+    height: 40%;
+    margin: 40vh auto;
+  }
+  .startButtonContainer{
+    width: 50%;
+
+    height: 25%;
+    top:59%;
+    left: 48%;
+  }
+  .profileIMGcontainer{
+    margin-top: 0;
+  }
+  .loginProfileIMG{
+    width: 30%;
+  }
+  .username{
+    font-size: 12px;
+    margin-top: -1vh;
+  }
+  .inputContainer{
+    height: 12%;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
