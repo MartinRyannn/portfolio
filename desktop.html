@@ -1,0 +1,947 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+    <link rel="stylesheet" href="styles/desktopStyles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your user ID
+            emailjs.init('AtBNbpJ3PCYxjAg2o'); // Replace 'AtBNbpJ3PCYxjAg2o' with your actual user ID from EmailJS
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Clear previous error messages
+                document.getElementById('name-error').innerText = '';
+                document.getElementById('email-error').innerText = '';
+                document.getElementById('message-error').innerText = '';
+                document.getElementById('success-message').innerText = '';
+                document.getElementById('form-error').innerText = '';
+
+                // Validate form inputs
+                let isValid = true;
+
+                // Name validation
+                const name = document.querySelector('input[name="user_name"]').value;
+                if (name.trim() === '') {
+                    document.getElementById('name-error').innerText = 'Name is required.';
+                    isValid = false;
+                }
+
+                // Email validation
+                const email = document.querySelector('input[name="user_email"]').value;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.trim() === '') {
+                    document.getElementById('email-error').innerText = 'Email is required.';
+                    isValid = false;
+                } else if (!emailPattern.test(email)) {
+                    document.getElementById('email-error').innerText = 'Invalid email format.';
+                    isValid = false;
+                }
+
+                // Message validation
+                const message = document.querySelector('textarea[name="message"]').value;
+                if (message.trim() === '') {
+                    document.getElementById('message-error').innerText = 'Message is required.';
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    emailjs.sendForm('service_98cjvai', 'template_9fd5juo', this)
+                        .then(() => {
+                            document.getElementById('success-message').innerText = 'Your message has been sent successfully!';
+                        }, (error) => {
+                            document.getElementById('form-error').innerText = 'Failed to send your message. Please try again later.';
+                            console.log('FAILED...', error);
+                        });
+                }
+            });
+        }
+    </script>
+</head>
+
+    
+<body>
+    <div class="blind"></div>
+    <div class="mainContainer">
+        <div class="appsContainer">
+            <button class="appBox" onclick="showAboutPopup()">
+                <img src="images/icons/info.png" class="appIcon" alt="About Me">
+                <div class="appTitle">About Me</div>
+            </button>
+            <div class="appBox" onclick="showPopup5()">
+                <img src="images/icons/projects2.png" class="appIcon" alt="My Projects">
+                <div class="appTitle">My Projects</div>
+            </div>
+            <div class="appBox" onclick="showPopup4()">
+                <img src="images/icons/experience.png" class="appIcon" alt="Experience">
+                <div class="appTitle">Experience</div>
+            </div>
+            <div class="appBox" onclick="showAboutPopup2()">
+                <img src="images/icons/skills2.png" class="appIcon" alt="My Skills">
+                <div class="appTitle">My Skills</div>
+            </div>
+            <div class="appBox" onclick="showPopup3()">
+                <img src="images/icons/contact.png" class="appIcon" alt="Contact Me">
+                <div class="appTitle">Contact Me</div>
+            </div>
+        </div>
+        <div class="appsContainer">
+            <a href="./MartinsLacis_CV.pdf" download="Hire_Me_Please" class="appBox">
+                <img src="images/icons/cv2.png" class="appIcon" alt="My CV">
+                <div class="appTitle">My CV</div>
+            </a>
+
+        </div>
+
+
+            <!-- PAGES -->
+
+    <div class="pageContainer1" id="container1">
+        <div class="pageTopBar">
+            <img src="images/icons/info.png" alt="" class="topBarIcon">
+            <div class="topBarTitle">About Me</div>
+            <div class="topBarButtons"> 
+                <button class="topButtonBox"><img src="images/buttons/button1.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="maximisePopup()"><img src="images/buttons/button2.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="closePopup()"><img src="images/buttons/button3.png" alt="" class="topButton"></button>
+            </div>
+        </div>
+        <div class="pageLeftBar">
+            <img src="images/profileImage.png" alt="" class="profileImage">
+            <div class="infoBox">
+                <div class="infoBoxTop">
+                    <img src="images/icons/name.png" alt="" class="infoTopIcon">
+                    <div class="infoBoxTopText">Full Name</div>
+                </div>
+                <div class="infoBoxBottom">
+                    <span class="infoBoxBottomText">Martin Ryan Lacis</span>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="infoBoxTop">
+                    <img src="images/icons/name.png" alt="" class="infoTopIcon">
+                    <div class="infoBoxTopText">Birth Date</div>
+                </div>
+                <div class="infoBoxBottom">
+                    <span class="infoBoxBottomText">21.12.2005</span>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="infoBoxTop">
+                    <img src="images/icons/date.png" alt="" class="infoTopIcon">
+                    <div class="infoBoxTopText">Birth Place</div>
+                </div>
+                <div class="infoBoxBottom">
+                    <span class="infoBoxBottomText">Latvia, Ventspils</span>
+                </div>
+            </div>
+        </div>
+        <div class="pageRightBar2">
+            <div class="rightBarTopText">About Me</div>
+            <div class="rightBarContainer">
+                <div class="rightBarItem">
+                    <img src="images/icons/frontend.png" alt="" class="itemIcon">
+                    <div class="itemText">Frontend Developer</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/figma.png" alt="" class="itemIcon">
+                    <div class="itemText">Hard Working</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/heart.png" alt="" class="itemIcon">
+                    <div class="itemText">Inspired</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/learn.png" alt="" class="itemIcon">
+                    <div class="itemText">Learning New Languages</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/school.png" alt="" class="itemIcon">
+                    <div class="itemText">Vocational secondary education</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/passion.png" alt="" class="itemIcon">
+                    <div class="itemText">Passionate</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/life.png" alt="" class="itemIcon">
+                    <div class="itemText">Active Lifestyle</div>
+                </div>
+                <div class="rightBarItem">
+                    <img src="images/icons/exp.png" alt="" class="itemIcon">
+                    <div class="itemText">5 Year programming Experience</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pageContainer2" id="container2">
+        <div class="pageTopBar">
+            <img src="images/icons/skills2.png" alt="" class="topBarIcon">
+            <div class="topBarTitle">My Skills</div>
+            <div class="topBarButtons"> 
+                <button class="topButtonBox"><img src="images/buttons/button1.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="maximisePopup()"><img src="images/buttons/button2.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="closePopup2()"><img src="images/buttons/button3.png" alt="" class="topButton"></button>
+            </div>
+        </div>
+        <div class="skillBottom">
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/htmlcss.png" alt="">
+                    <div class="boxMiddleText">HTML, CSS</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/piton.png" alt="">
+                    <div class="boxMiddleText">PYTHON</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/design.png" alt="">
+                    <div class="boxMiddleText">UI/UX</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/react.png" alt="">
+                    <div class="boxMiddleText">REACT, NATIVE</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/ai.png" alt="">
+                    <div class="boxMiddleText">OPENAI</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/tools.png" alt="">
+                    <div class="boxMiddleText">DESIGN TOOLS</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/ai.png" alt="">
+                    <div class="boxMiddleText">OPENAI</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/team.png" alt="">
+                    <div class="boxMiddleText">TEAMWORK</div>
+                </div>
+            </div>
+            <div class="skillBox">
+                <div class="skillBoxTop">
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText">Local Disk (C: )</div>
+                </div>  
+                <div class="boxMiddleContainer">
+                    <img class="boxMiddleIcon" src="images/icons/api.png" alt="">
+                    <div class="boxMiddleText">API'S</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+            <div class="skillBox2" id="container3">
+                <div class="skillBoxTop2">
+                    
+                    <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+                    <div class="boxTopText2">Contact Me (C: )</div>
+                    <button class="topButtonBox" onclick="closePopup3()"><img src="images/buttons/button3.png" alt="" class="topButton2"></button>
+                </div> 
+                <div class="aboutText">+371 22098292</div>
+                <div class="aboutText">martin.ryan.lacis@gmail.com</div>
+                <div class="aboutText">Valmieras Iela 19, Riga</div>
+                <div class="aboutText">GitHub: MartinRyann</div>
+                <button class="contactButton" onclick="showContact()">CONTACT ME</button>
+    </div>
+
+    <div class="skillBox3" id="containerContact">
+        <div class="skillBoxTop3">
+            <img src="images/icons/error.png" alt="" class="skillBoxTopIcon">
+            <div class="boxTopText2">Contact Me (C: )</div>
+            <button class="topButtonBox" onclick="closePopupContact()"><img src="images/buttons/button3.png" alt="" class="topButton2"></button>
+        </div> 
+        <form id="contact-form">
+            <input type="hidden" name="contact_number" value="123456">
+            <div class="contactInputContainer">
+                <div class="contactTitle">NAME</div>
+                <input type="text" class="contactInput" name="user_name">
+                <p class="error-message" id="name-error"></p>
+            </div>
+            <div class="contactInputContainer">
+                <div class="contactTitle">E-MAIL</div>
+                <input type="email" class="contactInput" name="user_email">
+                <p class="error-message" id="email-error"></p>
+            </div>
+            <div class="contactInputContainer2">
+                <div class="contactTitle">MESSAGE</div>
+                <textarea class="contactInput2" name="message"></textarea>
+                <p class="error-message" id="message-error"></p>
+            </div>
+            <input class="submitButton" type="submit" value="Send">
+            <p class="success-message" id="success-message"></p>
+            <p class="error-message" id="form-error"></p>
+        </form>
+    </div>
+    
+
+
+    <div class="pageContainer4" id="container4">
+        <div class="pageTopBar">
+            <img src="images/icons/experience.png" alt="" class="topBarIcon">
+            <div class="topBarTitle">Experience</div>
+            <div class="topBarButtons"> 
+                <button class="topButtonBox"><img src="images/buttons/button1.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="maximisePopup()"><img src="images/buttons/button2.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="closePopup4()"><img src="images/buttons/button3.png" alt="" class="topButton"></button>
+            </div>
+        </div>
+        <div class="pageLeftBar2">
+            <div class="leftTopHeading">EXPERIENCES</div>
+            <div class="experienceButtonContainer">
+                <button class="experienceButton" onclick="showExperience('webProgramming')">WEB PROGRAMMING</button>
+                <button class="experienceButton" onclick="showExperience('gameDevelopment')">GAME DEVELOPMENT</button>
+                <button class="experienceButton" onclick="showExperience('uiDesign')">UI/UX DESIGN</button>
+                <button class="experienceButton" onclick="showExperience('aiDev')">AI DEVELOPMENT</button>
+            </div>
+            
+    
+            
+        </div>
+        <div class="pageRightBar">
+
+
+            <div class="rightBarContainer2">
+                <div id="webProgramming" class="experiencesContainer">
+                    <div class="experiencesMainHeading">WEB PROGRAMMING</div>
+                    <div class="experienceContainer">
+                        <div class="expLeft">
+                            <div class="experienceBox-small">
+                                <div class="expBoxHeading">EXPERIENCE</div>
+                                <div class="expBoxText">4 Years</div>
+                            </div>
+                            <div class="experienceBox-mid">
+                                <div class="expBoxHeading">TECHNICAL SKILLS</div>
+                                <div class="expSkillBox">
+                                    <div class="expSkillHeading">DATABASES</div>
+                                    <div class="rateBox">
+                                        <div class="rateTitle">MySQL</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="expSkillBox-scroll">
+                                    <div class="expSkillHeading">FRAMEWORKS</div>
+                                    <div class="rateBox">
+                                        <div class="rateTitle">SVELTE</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox">
+                                        <div class="rateTitle">ANGULAR</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="experienceBox-big">
+                            <div class="expBoxHeading">SKILLS</div>
+                            <div class="expBoxParagraph">Proficient in front-end and back-end development, including <span class="boldSpan">HTML, CSS, JavaScript, React, Python</span> and <span class="boldSpan">PHP</span>.</div>
+                            <div class="expSkillBox-big">
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">HTML</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                    </div>
+                                </div>
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">CSS</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                    </div>
+                                </div>
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">JAVASCRIPT</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star-0"></div>
+                                        <div class="star-0"></div>
+                                    </div>
+                                </div>
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">REACT</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star-0"></div>
+                                    </div>
+                                </div>
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">PYTHON</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star-0"></div>
+                                        <div class="star-0"></div>
+                                    </div>
+                                </div>
+                                <div class="rateBox-big">
+                                    <div class="rateTitle-big">PHP</div>
+                                    <div class="starBox">
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star"></div>
+                                        <div class="star-0"></div>
+                                        <div class="star-0"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div id="gameDevelopment" class="experiencesContainer2">
+                        <div class="experiencesMainHeading">GAME DEVELOPMENT</div>
+                        <div class="experienceContainer">
+                            <div class="expLeft">
+                                <div class="experienceBox-small">
+                                    <div class="expBoxHeading">EXPERIENCE</div>
+                                    <div class="expBoxText">2 Years</div>
+                                </div>
+                                <div class="experienceBox-mid">
+                                    <div class="expBoxHeading">TECHNICAL SKILLS</div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">GAME ENGINES</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">UNITY</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">UNREAL ENGINE</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">GAME DESIGN</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">LEVEL DESIGN</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">ANIMATIONS</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox bellow">
+                                            <div class="rateTitle">CHARACTERS</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox bellow">
+                                            <div class="rateTitle">GAMEPLAY</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="experienceBox-big">
+                                <div class="expBoxHeading">SKILLS</div>
+                                <div class="expBoxParagraph-small">Experienced in <span class="boldSpan">2D, 3D,</span> and <span class="boldSpan">mobile game</span> creation with Unity and Unreal Engine, using <span class="boldSpan">Lua, C++,</span> and <span class="boldSpan">JavaScript</span>.</div>
+                                <div class="expSkillBox-big">
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">2D</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">3D</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">MOBILE</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">LUA</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">C++</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle-big">JAVASCRIPT</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    
+
+                </div>
+
+                <div id="uiDesign" class="experiencesContainer3">
+                    <div class="experiencesMainHeading">UI/UX DESIGN</div>
+                        <div class="experienceContainer">
+                            <div class="expLeft">
+                                <div class="experienceBox-small">
+                                    <div class="expBoxHeading">EXPERIENCE</div>
+                                    <div class="expBoxText">3 Years</div>
+                                </div>
+                                <div class="experienceBox-mid">
+                                    <div class="expBoxHeading">TECHNICAL SKILLS</div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">SOFTWARE</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">FIGMA</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">PHOTOSHOP</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">SOFT SKILLS</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">WEB DESIGN</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">ANIMATIONS</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox bellow">
+                                            <div class="rateTitle">COLORS</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox bellow">
+                                            <div class="rateTitle">LAYOUT</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="experienceBox-big">
+                                <div class="expBoxHeading">SKILLS</div>
+                                <div class="expBoxParagraph-small">Experienced in creating intuitive user interfaces. Proficient in <span class="boldSpan">wireframing, prototyping, visual design and responsive design</span>.</div>
+                                <div class="expSkillBox-big">
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle">WIREFRAMING</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle">PROTOTYPING</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle">VISUAL DESIGN</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-big">
+                                        <div class="rateTitle">RESPONSIVNESS</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                </div>
+
+                <div id="aiDev" class="experiencesContainer4">
+                    <div class="experiencesMainHeading">AI DEVELOPMENT</div>
+                        <div class="experienceContainer">
+                            <div class="expLeft">
+                                <div class="experienceBox-small">
+                                    <div class="expBoxHeading">EXPERIENCE</div>
+                                    <div class="expBoxText">2 Months</div>
+                                </div>
+                                <div class="experienceBox-mid">
+                                    <div class="expBoxHeading">TECHNICAL SKILLS</div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">TOOLS</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">GPT</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">GEMINI</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="expSkillBox-scroll">
+                                        <div class="expSkillHeading">AI MODULES</div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">OpenAI</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        <div class="rateBox">
+                                            <div class="rateTitle">LLM</div>
+                                            <div class="starBox">
+                                                <div class="star"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                                <div class="star-0"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="experienceBox-big">
+                                <div class="expBoxHeading">SKILLS</div>
+                                <div class="expBoxParagraph-small">Currently expanding expertise in AI development, with a focus on leveraging cutting-edge technologies and APIs like <span class="boldSpan">OpenAI, TensorFlow, PyTorch and IBM Watson</span></div>
+                                <div class="expSkillBox-big">
+                                    <div class="rateBox-bigger above">
+                                        <div class="rateTitle">OpenAI</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-bigger above">
+                                        <div class="rateTitle">TensorFlow</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-bigger">
+                                        <div class="rateTitle">PyTorch</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rateBox-bigger">
+                                        <div class="rateTitle">IBM Watson</div>
+                                        <div class="starBox">
+                                            <div class="star"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                            <div class="star-0"></div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                </div>
+
+                
+
+                
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="pageContainer5" id="container5">
+        <div class="pageTopBar noRadius">
+            <img src="images/icons/experience.png" alt="" class="topBarIcon">
+            <div class="topBarTitle">Experience</div>
+            <div class="topBarButtons"> 
+                <button class="topButtonBox"><img src="images/buttons/button1.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="maximisePopup()"><img src="images/buttons/button2.png" alt="" class="topButton"></button>
+                <button class="topButtonBox" onclick="closePopup5()"><img src="images/buttons/button3.png" alt="" class="topButton"></button>
+            </div>
+        </div>
+        <div class="consoleBox">
+            <div class="logText">LOADING PROJECTS ...</div>
+            <a href="#" target="_blank" class="projectBox Pbox1"></a>
+            <a href="#" target="_blank" class="projectBox Pbox2" ></a>
+            <a href="#" target="_blank" class="projectBox Pbox3"></a>
+            <a href="#" target="_blank" class="projectBox Pbox4"></a>
+        </div>
+    </div>
+
+    <!-- PAGES END -->
+
+    <div class="navBar">
+        <div class="winButton">
+            <img src="images/icons/winIcon.png" alt="" class="winIcon">
+            <div class="winText">Start</div>
+        </div>
+    </div>
+    </div>
+    
+
+
+
+
+<script>
+    function showExperience(experienceType) {
+        // Hide all experience containers
+        document.querySelectorAll('.experiencesContainer, .experiencesContainer2, .experiencesContainer3, .experiencesContainer4' ).forEach(container => {
+            container.style.display = 'none';
+        });
+        
+        // Show the selected experience container
+        document.getElementById(experienceType).style.display = 'flex';
+    }
+</script>
+
+    <script src="./scripts/open.js"></script>
+    <script src="./scripts/open2.js"></script>
+
+
+</body>
+</html>
