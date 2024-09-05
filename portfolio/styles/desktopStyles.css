@@ -227,7 +227,7 @@
 
     .pageLeftBar{
         width: 30%;
-        height: 93.2%;
+        height: 95%;
         background-color: #4764ce;
         border-bottom-left-radius: 8px;
         display: flex;
@@ -236,7 +236,7 @@
     }
     .pageLeftBar2{
         width: 28%;
-        height: 93.2%;
+        height: 95%;
         background-color: #6981D9;
         border-bottom-left-radius: 8px;
         display: flex;
@@ -842,19 +842,19 @@ transform: translate(-50%, -50%);
 
     }
     .Pbox1{
-        background-image: url('../images/projects/project1.png');
+        background-image: url('../images/progress.jpg');
         background-size: cover;
     }
     .Pbox2{
-        background-image: url('../images/projects/project2.png');
+        background-image: url('../images/progress.jpg');
         background-size: cover;
     }
     .Pbox3{
-        background-image: url('../images/projects/project3.png');
+        background-image: url('../images/progress.jpg');
         background-size: cover;
     }
     .Pbox4{
-        background-image: url('../images/projects/project4.png');
+        background-image: url('../images/progress.jpg');
         background-size: cover;
     }
 
